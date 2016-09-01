@@ -2,6 +2,7 @@
 class Product{
 
 	// database connection and table name
+
 	private $conn;
 	private $table_name = "products";
 
@@ -74,6 +75,9 @@ class Product{
 	}
 
 	// used when filling up the update product form
+	/**
+	 *
+	 */
 	function readOne(){
 
 		// query to read single record
@@ -99,6 +103,7 @@ class Product{
 		$row = $stmt->fetch(PDO::FETCH_ASSOC);
 
 		// set values to object properties
+		$this->id   =$row['id'];
 		$this->name = $row['name'];
 		$this->price = $row['price'];
 		$this->description = $row['description'];
