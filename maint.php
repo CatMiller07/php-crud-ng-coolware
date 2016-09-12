@@ -191,6 +191,7 @@ app.controller('productsCtrl', function($scope, $http) {
 			$scope.description = data[0]["description"];
 			$scope.price = data[0]["price"];
 			
+			console.log("Here is the product: " + $scope.name);
 			// show modal
 			$('#modal-product-form').openModal();
 		})

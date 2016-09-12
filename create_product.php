@@ -10,14 +10,15 @@ include_once 'objects/product.php';
 $product = new Product($db);
 
 // get posted data
-$data = json_decode(file_get_contents("php://input")); 
+$data = json_decode(file_get_contents("php://input"));
 
 // set product property values
 $product->name = $data->name;
 $product->price = $data->price;
+$product->category_id = $data->category_id;
 $product->description = $data->description;
 $product->created = date('Y-m-d H:i:s');
-	
+
 // create the product
 if($product->create()){
 	echo "Product was created.";

@@ -4,25 +4,25 @@ header("Content-Type: application/json; charset=UTF-8");
 
 // include database and object files
 include_once 'config/database.php';
-include_once 'objects/product.php';
+include_once 'objects/productCategory.php';
 
 // instantiate database and product object
 $database = new Database();
 $db = $database->getConnection();
 
 // initialize object
-$product = new Product($db);
+$productCategory = new ProductCategory($db);
 
 // query products
-$stmt = $product->readAll();
+$stmt = $productCategory->getAllCategories();
 $num = $stmt->rowCount();
 
 // check if more than 0 record found
 if($num>0){
-	
+
 	$data="";
 	$x=1;
-	
+
 	// retrieve our table contents
 	// fetch() is faster than fetchAll()
 	// http://stackoverflow.com/questions/2770630/pdofetchall-vs-pdofetch-in-a-loop
@@ -31,15 +31,13 @@ if($num>0){
 		// this will make $row['name'] to
 		// just $name only
 		extract($row);
-		
+
 		$data .= '{';
 			$data .= '"id":"'  . $id . '",';
-			$data .= '"name":"'   . $name . '",';
-			$data .= '"description":"'   . html_entity_decode($description) . '",';
-			$data .= '"price":"' . $price . '"';
-		$data .= '}'; 
-		
-		$data .= $x<$num ? ',' : ''; 
+			$data .= '"name":"'   . $name . '"';
+ 		$data .= '}';
+
+		$data .= $x<$num ? ',' : '';
 
 		$x++;
 	}
