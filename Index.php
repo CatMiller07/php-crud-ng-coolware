@@ -11,7 +11,11 @@
        <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
        <link rel="sytlesheet" type"text/css" href="css/style.css">
 	</head>
+<<<<<<< HEAD:Index.php
 <body ng-app="myApp"  style="body{max-width: 860px;>
+=======
+<body ng-app="myApp" ng-controller="homeCtrl" style="body{max-width: 860px;>
+>>>>>>> 276bbad2cf000c2b84ac0738d8a4a998f8c57008:Index.php
 
   <!----------Page Header ------------>
   <div id="maincontent" ">
@@ -27,10 +31,15 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.min.js"></script>
   <!------- my js --------------->
+<<<<<<< HEAD:Index.php
 	  <script link src="js/dirpagination.js"></script>
   <script link src="js/app.js"></script>
 
 
+=======
+  <script link src="js/home.js"></script>
+     
+>>>>>>> 276bbad2cf000c2b84ac0738d8a4a998f8c57008:Index.php
 
 </body>
 </html>
